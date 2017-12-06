@@ -16,7 +16,10 @@
     "url": "https://github.com/tamn1988/Nails/issues"
   },
   "homepage": "https://github.com/tamn1988/Nails#readme",
-  "dependencies": {},
+  "dependencies": {
+    "normalize": "^0.3.1",
+    "normalize.css": "^7.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^7.2.1",
     "browser-sync": "^2.18.13",

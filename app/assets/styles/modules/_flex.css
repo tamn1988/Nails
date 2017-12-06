@@ -1,0 +1,15 @@
+.flex{
+	display: flex;
+
+	&__medium-6{
+		flex-basis: 50%;
+	}
+
+	&--gutters{
+		margin-right: -30px;
+	}
+
+	&--gutters > div{
+		padding-right: 30px;
+	}
+}

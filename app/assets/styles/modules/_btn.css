@@ -1,0 +1,7 @@
+.btn{
+	padding: .35rem .875rem;
+	background-color: $mainGreen;
+	color: #fff;
+	border-radius: 22px;
+	font-size: .875rem;
+}
