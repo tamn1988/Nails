@@ -7,6 +7,10 @@
 	}
 
 	@mixin atMedium{
+		&__b-margin-until-medium{
+			margin-bottom: 0;
+		}
+
 		& {
 			flex-direction: row;
 		}
@@ -14,13 +18,18 @@
 		&__medium-6{
 			flex-basis: 50%;
 		}
-	}
 
-	&--gutters{
+		&__medium-4{
+			flex-basis: 33.3333%;
+		}
+
+		&--gutters{
 		margin-right: -30px;
+		}
+
+		&--gutters > div{
+		padding-right: 30px;
+		}
 	}
 
-	&--gutters > div{
-		padding-right: 30px;
-	}
 }

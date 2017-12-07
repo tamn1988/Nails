@@ -1,0 +1,18 @@
+.info-item{
+	font-size: 1.4375rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+
+	&__box{
+		width: 100%;
+		padding: 12px;
+		background-color: $mainRed;
+		min-height: 75px;
+	}
+
+	&__image{
+		display: block;
+		width: 100%;
+	}
+}

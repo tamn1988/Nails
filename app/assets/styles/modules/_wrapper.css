@@ -4,4 +4,17 @@
 	padding-left: 35px;
 	padding-right: 35px;
 	max-width: 1366px;
+
+	&--no-padding-until-medium{
+		padding-left: 0;
+		padding-right: 0;
+
+
+		@mixin atMedium{
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+	}
+
+
 }
