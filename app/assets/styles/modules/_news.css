@@ -1,0 +1,12 @@
+.news{
+	&__item{
+		margin-bottom: .5rem;
+		padding-bottom: .5rem;
+		border-bottom: 1px dotted #444;
+	}
+
+	&__item--date{
+		color: $mainRed;
+		margin-right: 1rem;
+	}
+}

@@ -4,4 +4,9 @@
 	color: #fff;
 	border-radius: 22px;
 	font-size: .875rem;
+	display: inline-block;
+
+	&--margin-t{
+		margin-top: 1rem;
+	}
 }

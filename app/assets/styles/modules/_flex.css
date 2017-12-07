@@ -1,8 +1,19 @@
 .flex{
 	display: flex;
+	flex-direction: column;
 
-	&__medium-6{
-		flex-basis: 50%;
+	&__b-margin-until-medium{
+		margin-bottom: 2rem;
+	}
+
+	@mixin atMedium{
+		& {
+			flex-direction: row;
+		}
+
+		&__medium-6{
+			flex-basis: 50%;
+		}
 	}
 
 	&--gutters{
