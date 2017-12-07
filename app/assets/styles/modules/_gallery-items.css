@@ -1,0 +1,14 @@
+.gallery-item{
+	margin-bottom: .75%;
+
+	&__img--size{
+		width: 32.5833%;
+		height: 33.333%;
+
+		@mixin atMedium{
+
+			width: 15.9166%;
+			height: 15.9166%;
+		}
+	}
+}

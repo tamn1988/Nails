@@ -7,4 +7,8 @@
 	margin: 0;
 	border-bottom: 2px solid $mainGreen;
 	font-weight: 400;
+
+	&--b-margin{
+		margin-bottom: 2rem;
+	}
 }

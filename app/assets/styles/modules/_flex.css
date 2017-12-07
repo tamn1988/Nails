@@ -1,9 +1,18 @@
 .flex{
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 
 	&__b-margin-until-medium{
 		margin-bottom: 2rem;
+	}
+
+	&__wrap{
+		flex-wrap: wrap;
+	}
+
+	&__row{
+		flex-direction: row;
 	}
 
 	@mixin atMedium{
@@ -16,19 +25,11 @@
 		}
 
 		&__medium-6{
-			flex-basis: 50%;
+			flex-basis: 48.5%;
 		}
 
 		&__medium-4{
-			flex-basis: 33.3333%;
-		}
-
-		&--gutters{
-		margin-right: -30px;
-		}
-
-		&--gutters > div{
-		padding-right: 30px;
+			flex-basis: 31.833%;
 		}
 	}
 
