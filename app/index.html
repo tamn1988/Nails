@@ -8,30 +8,37 @@
 		<meta name="description" content="This is the concept page for Miro Nail in Sawtelle, LA. Featuring gel nails; high quality products made in Japan, also adhering to strict safety standards.">
 		<link rel="stylesheet" href="temp/styles/styles.css">
 		<body>
-			<header>
-				<img src="assets/images/logo.png" alt="Store logo">
-				<nav>
-					<ul>
-						<li>Home</li>
-						<li>Concept</li>
-						<li>Menu</li>
-						<li>Staff</li>
-						<li>Contact</li>
-						<li>Appointment</li>
-						<li>News</li>
-					</ul>
-				</nav>
-				<select id="language-selector">
-					<option value="eng" selected>English</option>
-					<option value="jap">Japanese</option>
-				</select>
-				<span>Facebook</span>
-				<span>Instagram</span>
-				<span>Yelp</span>
-				<p>2010 Sawtelle Blvd.,Los Angeles, CA 90025</p>
-				<p>310-268-7870</p>
+			<header class="site-header">
+				<div class="wrapper">
+					<div class="flex">
+						<div class="site-header__left-nav">
+							<img class="site-header__logo" src="assets/images/logo.png" alt="Store logo">
+							<p>2010 Sawtelle Blvd.,Los Angeles, CA 90025</p>
+							<p>310-268-7870</p>
+						</div>
+						<div class="site-header__right-nav">
+							<nav>
+								<ul class="flex">
+									<li>Home</li>
+									<li>Concept</li>
+									<li>Menu</li>
+									<li>Staff</li>
+									<li>Contact</li>
+									<li>Appointment</li>
+									<li>News</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+<!-- 					<select id="language-selector">
+						<option value="eng" selected>English</option>
+						<option value="jap">Japanese</option>
+					</select>
+					<span>Facebook</span>
+					<span>Instagram</span>
+					<span>Yelp</span> -->
+				</div>
 			</header>
-			
 			<div class="carousel">
 				<img src="assets/images/slider01.jpg" alt="Storefront">
 				<h1>Tokyo-Style Gel Nail Salon</h1>
@@ -69,40 +76,42 @@
 				<div class="wrapper wrapper--no-padding-until-medium">
 					<div id="info" class="flex">
 						<div class="flex__medium-4 info-item flex__b-margin-until-medium"><a href="#"><img class="info-item__image" src="assets/images/pic-index-service-menu.jpg" alt="Service Menu"></a><div class="info-item__box flex--v-center">Menu</div>
-						</div>
-						<div class="flex__medium-4 info-item flex__b-margin-until-medium"><a href="#"><img class="info-item__image" src="assets/images/pic-index-service-staff.jpg" alt="Our Staff"></a><div class="info-item__box">Staff</div>
-						</div>
-						<div class="flex__medium-4 info-item flex__b-margin-until-medium"><a href="#"><img class="info-item__image" src="assets/images/pic-index-service-contact.jpg" alt="Contact Us"></a><div class="info-item__box">Contact & Support</div></div>
 					</div>
+					<div class="flex__medium-4 info-item flex__b-margin-until-medium"><a href="#"><img class="info-item__image" src="assets/images/pic-index-service-staff.jpg" alt="Our Staff"></a><div class="info-item__box">Staff</div>
 				</div>
+				<div class="flex__medium-4 info-item flex__b-margin-until-medium"><a href="#"><img class="info-item__image" src="assets/images/pic-index-service-contact.jpg" alt="Contact Us"></a><div class="info-item__box">Contact & Support</div></div>
 			</div>
-			<div class="page-section">
-				<div class="wrapper">
-					<h2 class="section-title section-title--b-margin">Gallery<a href="#">Instagram Profile</a></h2>
-					<div id="gallery" class="flex flex__wrap flex__row">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal1.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal2.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal3.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal4.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal5.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal6.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal7.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal8.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal9.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal10.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal11.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal12.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal13.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal14.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal15.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal16.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal17.jpg" alt="">
-						<img class="gallery-item gallery-item__img--size" src="assets/images/gal18.jpg" alt="">
-					</div>
-				</div>
+		</div>
+	</div>
+	<div class="page-section">
+		<div class="wrapper">
+			<h2 class="section-title section-title--b-margin">Gallery<a href="#">Instagram Profile</a></h2>
+			<div id="gallery" class="flex flex__wrap flex__row">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal1.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal2.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal3.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal4.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal5.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal6.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal7.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal8.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal9.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal10.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal11.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal12.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal13.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal14.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal15.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal16.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal17.jpg" alt="">
+				<img class="gallery-item gallery-item__img--size" src="assets/images/gal18.jpg" alt="">
 			</div>
-			<footer>
-				<p>&copy; 2017 miro nail, All Rights Reserved</p>
-			</footer>
-		</body>
-	</html>
+		</div>
+	</div>
+	<footer>
+		<div class="footer">
+			<p>&copy; 2017 miro nail, All Rights Reserved</p>
+		</div>
+	</footer>
+</body>
+</html>

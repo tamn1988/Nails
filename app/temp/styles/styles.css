@@ -479,8 +479,15 @@ a{
 }
 
 .page-section{
-	padding: 4.125rem 0;
+	padding: 2rem 0;
 }
+
+@media (min-width: 800px){
+
+.page-section{
+		padding: 4.125rem 0
+}
+	}
 
 .section-title{
 	font-size: 1.375rem;
@@ -636,4 +643,25 @@ a{
 			width: 15.9166%;
 			height: 15.9166%
 	}
+	}
+
+.footer{
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.site-header{
+	background-color: #8BB283;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 300;
+	position: fixed;
+	width: 100%;
+
+}
+
+.site-header__logo{
+		background-color: #fff;
+		max-width: 300px;
+		padding: 1.5rem;
 	}
