@@ -5,6 +5,10 @@
 	padding-right: 35px;
 	max-width: 1366px;
 
+	&--clear{
+		@mixin clearfix;
+	}
+
 	&--no-padding-until-medium{
 		padding-left: 0;
 		padding-right: 0;

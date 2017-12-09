@@ -1,0 +1,8 @@
+.social-icons{
+	padding-top: 21px;
+
+
+	&--float-right{
+		float: right;
+	}
+}
