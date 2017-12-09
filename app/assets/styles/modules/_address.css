@@ -1,0 +1,9 @@
+.address{
+	font-weight: 400;
+	font-size: 1rem;
+
+	&--h-center{
+		width: 300px;
+		text-align: center;
+	}
+}

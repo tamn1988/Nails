@@ -3,6 +3,14 @@
 	flex-direction: column;
 	justify-content: space-between;
 
+	&--v-center{
+		align-content: center;
+	}
+
+	&__child--v-center{
+		align-self: center;
+	}
+
 	&__b-margin-until-medium{
 		margin-bottom: 2rem;
 	}

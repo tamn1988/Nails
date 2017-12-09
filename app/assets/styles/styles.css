@@ -15,3 +15,5 @@
 @import 'modules/_site-header';
 @import 'modules/_primary-nav';
 @import 'modules/_social-icons';
+@import 'modules/_address';
+@import 'modules/_large-hero';

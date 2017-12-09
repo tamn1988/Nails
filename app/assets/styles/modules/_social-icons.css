@@ -1,8 +1,15 @@
 .social-icons{
-	padding-top: 21px;
+	font-size: 1.5rem;
+	color: $mainRed;
+	
 
+	&__icon{
+		padding: 7px 14px;
+		background-color: #fff;
+		border-radius: 50%;
+	}
 
-	&--float-right{
-		float: right;
+	span{
+		margin-right: 12px;
 	}
 }

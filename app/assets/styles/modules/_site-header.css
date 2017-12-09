@@ -14,20 +14,16 @@
 		background-color: #fff;
 		padding: 1.2rem;
 		max-width: 300px;
-		vertical-align: top;
-}
-
-	&__top{
-		background-color: rgba($mainGreen, 1);
-		width: 100%;
+		height: 70px;
 	}
 
-	&__bottom{
-		background-color: rgba($mainGreen, .85);
+	&__top-bar{
+		background-color: $mainGreen;
+	}
 
-		&__address{
-			display: inline-block;
-		}
+	&__bottom-bar{
+		background-color: rgba($mainGreen, .8);
+		padding: .5rem 0;
 	}
 
 }
