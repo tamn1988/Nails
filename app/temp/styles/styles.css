@@ -542,9 +542,6 @@ a{
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
 
 }
 
@@ -584,6 +581,9 @@ a{
 			-webkit-box-direction: normal;
 			    -ms-flex-direction: row;
 			        flex-direction: row;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
 		}
 
 		.flex__medium-6{
@@ -670,7 +670,7 @@ a{
 .site-header{
 	color: white;
 	font-weight: 300;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	position: fixed;
 	width: 100%;
 
@@ -686,19 +686,49 @@ a{
 		padding: 1.2rem;
 		max-width: 300px;
 		height: 70px;
+		margin: 0 auto;
+	}
+
+@media (min-width: 800px){
+
+.site-header__logo{
+			margin: 0
+	}
 	}
 
 .site-header__top-bar{
 		background-color: #8BB283;
+
 	}
 
 .site-header__bottom-bar{
-		background-color: rgba(139,178,131, .8);
+		background-color: rgba(139,178,131, .7);
 		padding: .5rem 0;
+		display: none;
 	}
+
+@media (min-width: 800px){
+
+.site-header__bottom-bar{
+			display: block
+	}
+	}
+
+.primary-nav{
+	display: none;
+
+}
 
 .primary-nav li{
 		padding-right: 12px;
+	}
+
+@media (min-width: 800px){
+
+.primary-nav{
+		display: inherit
+
+}
 	}
 
 .social-icons{
@@ -727,6 +757,41 @@ a{
 	}
 
 .large-hero{
-	width: 100%;
-	background-image: url('assets/images/slider02.jpg');
+	position: relative;
+	z-index: -1;
+
 }
+
+.large-hero__gradient-wrapper{
+		background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.3)), to(rgba(0,0,0,0.3)));
+		background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+		position: relative;
+	}
+
+.large-hero__image{
+		position: relative;
+		z-index: -1;
+		width: 100%;
+		padding-top: 70px;
+	}
+
+@media (min-width: 800px){
+
+.large-hero__image{
+			padding-top: 70px
+	}
+	}
+
+.large-hero__text-content{
+		position:absolute;
+		padding-top: 70px;
+		top: 50%;
+		left: 50%;
+		color: #fff;
+		font-weight: 300;
+		font-size: 3.5rem;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+		text-shadow: 2px 2px black;
+		text-align: center;
+	}

@@ -1,7 +1,6 @@
 .flex{
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 
 	&--v-center{
 		align-content: center;
@@ -30,6 +29,7 @@
 
 		& {
 			flex-direction: row;
+			justify-content: space-between;
 		}
 
 		&__medium-6{

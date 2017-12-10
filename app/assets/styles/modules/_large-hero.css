@@ -1,4 +1,35 @@
 .large-hero{
-	width: 100%;
-	background-image: url('assets/images/slider02.jpg');
+	position: relative;
+	z-index: -1;
+	
+	&__gradient-wrapper{
+		background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+		position: relative;
+	}
+
+
+	&__image{
+		position: relative;
+		z-index: -1;
+		width: 100%;
+		padding-top: 70px;
+
+		@mixin atMedium{
+			padding-top: 70px;
+		}
+	}
+
+	&__text-content{
+		position:absolute;
+		padding-top: 70px;
+		top: 50%;
+		left: 50%;
+		color: #fff;
+		font-weight: 300;
+		font-size: 3.5rem;
+		transform: translate(-50%, -50%);
+		text-shadow: 2px 2px black;
+		text-align: center;
+	}
+
 }

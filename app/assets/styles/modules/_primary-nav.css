@@ -1,7 +1,13 @@
 .primary-nav{
+	display: none;
 
 	li{
 		padding-right: 12px;
+	}
+
+
+	@mixin atMedium{
+		display: inherit;
 	}
 
 }
