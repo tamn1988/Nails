@@ -1,13 +1,37 @@
 .primary-nav{
-	display: none;
+	opacity: 0;
+	visibility: 0;
+	height: 0;
+	transform-origin: 0 50%;
+	transition: all .4s ease-out;
 
 	li{
 		padding-right: 12px;
+		padding-top: 10px;
+		/*border-bottom: 1px dotted black;*/
+		width: 100%;
+		text-align: center;
+
+		@mixin atMedium{
+			border-bottom: none;
+			text-align: left;
+		}
+	}
+
+	&--visible{
+		opacity: 1;
+		visibility: 1;
+		height: 100%;
+
 	}
 
 
 	@mixin atMedium{
 		display: inherit;
+		padding-top: 0;
+		opacity: 1;
+		visibility: 1;
+		height: 100%;
 	}
 
 }
