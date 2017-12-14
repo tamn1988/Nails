@@ -9,4 +9,8 @@
 		color: $mainRed;
 		margin-right: 1rem;
 	}
+
+	a:hover{
+		text-decoration: underline;
+	}
 }

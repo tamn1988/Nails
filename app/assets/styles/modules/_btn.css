@@ -5,6 +5,13 @@
 	border-radius: 22px;
 	font-size: .875rem;
 	display: inline-block;
+	transition: all .2s linear;
+
+
+	&:hover{
+		background-color: rgba($mainRed, 1);
+		color: #fff;
+	}
 
 	&--margin-t{
 		margin-top: 1rem;

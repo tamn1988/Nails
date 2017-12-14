@@ -11,4 +11,8 @@
 	&--b-margin{
 		margin-bottom: 2rem;
 	}
+
+	&--right-padding{
+		padding-right: 10px;
+	}
 }

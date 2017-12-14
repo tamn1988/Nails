@@ -81,8 +81,8 @@ var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _MobileMenu2.default();
-new _RevealOnScroll2.default(document.querySelectorAll('.info-item'), '80%');
-new _RevealOnScroll2.default(document.querySelectorAll('.gallery-item'), '80%');
+new _RevealOnScroll2.default(document.querySelectorAll('.info-item'), '75%');
+new _RevealOnScroll2.default(document.querySelectorAll('.gallery-item'), '75%');
 
 /***/ }),
 /* 1 */

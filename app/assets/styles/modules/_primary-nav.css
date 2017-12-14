@@ -6,15 +6,24 @@
 	transition: all .4s ease-out;
 
 	li{
-		padding-right: 12px;
-		padding-top: 10px;
-		/*border-bottom: 1px dotted black;*/
-		width: 100%;
+		padding: 5px 5px;
 		text-align: center;
+		border-radius: 3px;
+		cursor: pointer;
+		transition: all .3s linear;
+
+	&:hover{
+		background-color: white;
+		color: $mainGreen;
+		text-align: center;
+		font-weight: 400;
+
+	}
 
 		@mixin atMedium{
 			border-bottom: none;
 			text-align: left;
+			margin-right: 2px;
 		}
 	}
 
