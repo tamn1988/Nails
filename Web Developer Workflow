@@ -1,0 +1,419 @@
+21130176308
+
+Web Developer Workflow
+
+
+`````````````````````````````Git
+
+Project = Repository (repo)
+Working directory = the folder location on your computer where the project lives
+Staging = preparing, getting ready. Controls what gets committed
+Commit = Git's way of "saving". files needed to be staged before they can be commited
+
+Git stores your repository in a hidden folder in your local machine. A push request is required to sync your files to a webserver. Alternatively, you can can sync the files from the webserver to your local machine using a pull request
+
+cd into your working directory
+use "git init" to create repository
+
+git status -- which files as changed. red file names means that have not been add to staging. 
+git add "filename" - to add file to staging      -git add -A    - will add all files on git status to staging
+git commit -m "Commit message"  - commits changes
+git checkout -- . grabs files from local repo
+git clone "link"   - will clone a repo from a server
+git remote -v  - tells you the location git thinks you want to push the files to
+git remote set-url origin "url here"  - tells git the url you want to push to
+git push origin "branch"  - will push to whatever origin url you have set
+
+
+````````````````````````````Node and NPM
+
+npm init  - use it to create a package.json file
+npm install --save    - will your packages to the dependancies section of the package.json file
+npm install --save-dev will install packages to the dev depandencies section of the package.json file. Meaning theyre packages meant to make our lives easier as developers. regular npm install --save means it is a dependancy for browsers
+
+
+```````````````````````````Gulp
+What is gulp?
+	A build system
+	A build tool
+	A task runner
+	gulp = automation
+
+Lightweight
+Efficient
+Incredibly quick
+
+Steps to installing gulp
+
+1. Install globally
+npm install packagename --global
+
+2. install locally in your project file.
+
+
+on gulpfile.js
+var gulp = require('gulp');
+
+to run the default gulp task you can just type "gulp" in the command line.
+to run a specific task you can type "gulp nameoftask"
+
+
+gulp.src()  - lets us tell gulp where to get data from
+
+gulp.dest()  - directory or folder where we want data to go to
+
+gulp.pipe()  - the pipe between src and dest where we can manipulate the data
+
+
+
+
+
+```````````````````````````````CSS file Architecture
+
+CSS Organization
+
+1. File architecture
+use modules to break our css into sections of codes. and using @import and postcss to merge it all into one file.
+
+2. Identify patterns in design
+BEM - an abstract way of thinking about our interface
+
+B - Block. A independant reusable part of our design
+E - An element belongs to a block. it cannot be used outside of a block it belongs to.  blockclassname__elementname is the way to name element classes
+M - Modifier. can be used on a bloack or an element to indicate a change to the default state of an object. MODIFIERS USE --CLASSNAME
+
+	-css selectors should target elements directly with classes, instead of relying on type selectors, descendent selectors, and the cascade
+	- because we are limiting cascade we are free to move blocks around and reuse them throughout the page
+	-blocks can be nested inside other blocks.
+	-identify patterns, in our design and then create single-responsibility blocks
+		there is no reason to code a pattern more than once
+	-makes the relationship between our html and css clear
+
+
+3. Rules to follow for creating class names and writing our css selectors
+
+
+
+You can create a file name that starts with an underscore. You're indicating to other developers that the file is a partial file.
+
+
+var gulp = require('gulp')
+var watch = require('gulp-watch');
+var postcss = require('gulp-postcss');   - postcss
+var autoprefixer = require('autoprefixer');   - auto prefixer
+var cssvars = require('postcss-simple-vars'); - postcss variables
+var nested = require('postcss-nested');  - postcss nesting
+var cssImport = require('postcss-import');  -postcss imports to import partials
+
+
+IMPORTS NEED TO BE AT THE TOP OF CSS FILES.
+
+
+When Nesting is postcss. PostCSS naturally creates descendant selectors. WHICH GOES AGAINST THE BEM PHILOSIPHY. What we can do is use the & sign in our nesting selectors. And which this does is the & compiled as the name of the parent selector plus whatever you put behind it.
+
+For example.
+
+.large-hero{
+	position:relative;
+
+	/*this selector just means .large-hero__text-content*/
+	&__text-content {
+		css properties here
+	}
+}
+
+
+
+
+
+
+
+REM  - Takes the default of the root element. Which is HTML. The default is usually 16px for font-size;
+
+
+
+
+A MIXIN IS JUST A REUSABLE PART OF CSS CODE
+
+
+
+```````````````````````````````````Mobile first responsive design
+
+
+Where do we begin?
+	Start with css first and build using mobile first apporach.
+	Use postCss to make mixins for media queries to adjust content according to viewport width
+
+
+
+
+Responsive images
+
+	reponsive imague sitatutons
+
+	1. art direction and cropping situation. Picutre element is used when we need to control art direction for screen sizes
+		ALWAYS BEGIN WITH THE SMALLEST IMAGE FIRST
+
+		<picture>
+			<source srcset="images/dog-crop-large.jpg" media="(min-width: 1200px)"
+			<source srcset="images/dog-crop-medium.jpg" media="(min-width: 760px)"
+			<img src ="images/dog-crop-small.jpg" alt="puppy in the sand">
+		</picture>
+
+	2. image resolution and file size. This is use when we need faster load times.
+		<img srcset="images/dog-resolution-small.jpg 570w, images/dog-resolution-medium.jpg 1200w, images/dog-resolution-large.jpg 1920w" alt="puppy in the sand">
+
+		The browser will figure out which image to download.
+
+
+
+	The two methods can be combined. 
+
+	      <picture>
+        <source srcset="assets/images/hero--large.jpg, assets/images/hero--large-hi-dpi.jpg 3840w" media="(min-width: 1380px)">
+        <source srcset="assets/images/hero--medium.jpg assets/images/hero--medium-hi-dpi.jpg 2760w" media="(min-width: 990px)">
+        <source srcset="assets/images/hero--small.jpg, assets/images/hero--small-hi-dpi.jpg 1980w" media="(min-width: 640px)">
+        <img srcset="assets/images/hero--smaller.jpg, assets/images/hero--smaller-hi-dpi.jpg 1280w" alt="Coastal view of of ocean and Mountains">
+      </picture>
+
+
+
+	We need to tell the web browser what size the image will be render at. Browsers assume images will take the full width. So they will always grab a larger dpi than normal copy due to not knowing we will only display the image at 30% width for example;
+
+	this is done by adding sizes="404px" to the source element inside the picture element
+
+
+  By default web browsers treat images as inline level elements. Basically the browser thinks this image is a line of text. the browsers leaves a gap to make room for letters like y and g where the bottom sticks under
+
+
+
+
+
+
+```````````````````````````````Git Branches
+
+
+git branch -- will list all the branches in our repo
+git branch branchname -creates a new branch
+git checkout branchname - to switch branches
+git reset pathname -- will remove file from stage
+
+to merge branches to master
+first check out to master branch
+then
+git merge branchname
+
+git branch -d branchname to delete branch from local git
+
+Create a new branch for each new feature of our project.
+
+git checkout -b branchname   -- will create a new branch and switch over to it
+
+
+
+
+The more files a visitor has to download the slower it will take to load.
+Combine your icons into a sprite. (one imagine files that holds all svgs)
+
+
+
+
+Object-oriented programming
+
+What is object-oriented programming?
+
+Stop thinking in terms of individual variables an functions.
+Begin thinking in terms of cohesive, self-sufficient objects.
+
+
+When we require a file, the code from that file is immediately executed.
+the return of the require file is actually and object.
+
+require does not work in the browser since the browser does not access to the directory. Webpack is needed
+webpack is used for this.
+
+to use webpack.
+
+In order to use webpack the root directory neeeds webpack.config.js file. the file name is very strict
+
+The require('dirname') returns an object. Node js and webpack expects and exports object that tells the object what to return.
+
+
+Lazy Loading
+	allows assets to only download as needed
+
+
+
+
+
+
+
+
+
+	`````````````````header
+
+	nav is its own block
+
+	nav has a class of primary nav and a modifier of primary-nav--pull-right. the modifier class is used because he does not the default styling to be floated to the right.
+
+	Noticed the floats and was used on the nav element not UL or LI
+
+
+	li was floated to the left so they all sit on one line.
+	parent element has clearfix.
+
+
+
+
+	Splitting up javascript files
+
+
+	You can import a javascript file by "require" it in.
+	var example = require('./modules/foo').
+
+	The require method does not work in the web browser. Web Browsers have no clue what require means.
+
+	We need to leverage 'webpack'. Webpack will detect all 'require' files and bundle it together. The bundle file will work in the web browser.
+
+	to install webpack:
+
+	npm install webpack -g (if we have not globally installed webpack on our computer.)
+
+	Once webpack is installed we need to tell webpack a little about our project. We do that by creating a file in our root project directory called "webpack.config.js" NAME NEEDS TO BE EXACT.
+
+	Once created we need to create an object that tells webpack what to do. Inside our webpack file.
+
+		var path = require('path'); //Node.js module that provides methods of working with file and 		directory paths.
+
+		// path.resolve(processes a sequence of path from RIGHT to LEFT until an absolute path is resolved.)
+
+		//__dirname our current project directory
+
+		module.exports = {  //Object to be returned by webpack
+		entry: 'path to file', // Which file to begin looking at to create our bundle
+		output: {  //2nd object property is output, which is another object. 
+			//path: 'ABSOLUTE PATH TO WHERE WE WANT OUR BUNDLE TO BE EXPORTED TO'
+			path: path.resolve(__dirname, "./app/temp/scripts") 
+			// We used path.resolve to create an absolute path to our export directory.
+			filename: 'Name of bundle file we want to use'
+			}
+		}
+
+		To run webpack, just type "webpack" in the command line.
+
+
+
+		When we split our files and require it in. We need to spell out what our require file is returning. We do that adding:
+
+		module.exports = Foo;
+		//Module is just the global parent object to exports
+		// We use module.exports when we only want to export one thing. This will set the entire export object to whatever we want.
+
+		The reason why we do this is because when we require in a file. The code from the file is immediately executed. We need to export or expose certain parts of the code so that it is accessible or callable from where we required the file in.
+
+		For example:
+
+		var Foo = require('exampleModule');
+		console.log(Foo)  // returns an object. 
+		So if we dont export anything the object will be empty.
+n
+		When we require a file or module, Nodejs/webpack expects an export object to be returned.
+		So all we have to do is create a method/property to the export object and we will have them.
+
+		export.test = "hello".
+
+		console.log(Foo.test) // returns "hello"
+
+
+
+
+
+		Automating our webpack Setup
+
+			Webpack needs to be installed locally in our project file.
+
+		Create a new scripts.js in the gulp task folder and require it in the gulpfile.js folder
+
+		var gulp = require('gulp');
+		var webpack = require('webpack');
+
+		gulp.task('scripts', function(){
+			webpack(require('../../webpack.config.js'), function(){
+				console.log()
+			}); //webpack neeeds help finding config file. We just require in the webpack.config.js file that we created earlier.
+
+		})
+
+
+
+
+		Babel installation and webpack integration
+
+		npm intall babel-core babel-loader babel-preset-es2015 --save-dev
+
+		in webpack.config.js
+
+
+
+
+
+
+
+	class MobileMenu{
+		constructor(){
+
+		}
+
+
+	}
+
+
+
+
+
+export default MobileMenu from './modules/MobileMenu'
+new MobileMenu();
+
+
+
+
+
+
+
+
+Creating a hamburger Icon
+
+1. give width and height
+2. position icon
+3. create a div inside of the menu div
+4. styling of this div will be the middle bar
+5. use a pseudo content. Select the parent div and use ::before to style the top bar
+6. use ::after to style bottom bar
+7. Give the pseudo elements content: "";
+8. Use position absolute to style the Icon.
+
+
+Animating the hamburger Icon
+
+
+1. select top bar. &::before
+2. rotate the bar using transform: rotate(45deg)
+3. change transform origin (pivot point to top left corner)
+	takes a percentage transform:origin(x,y). Add transform origin to the initial element. the class that we are using javascript to add 
+4. in the same transform use scaleX() to make the bar reach bottom bar
+5. repeat for bottom bar except use -deg to make bar go up
+6. Use translateX or translateY to adjust the positioning of the bars. Goes in 		the same transform css property
+7. select middle bar and hide the bar using opacity to 0;
+8. Use transition to animate the bar&
+
+
+RevealOnScroll.
+
+1. In constructor select elements that we want to reveal
+2. Create a method to initially hide the elements by adding a class. 
+3. Create a new css module where we will be adding our styling to.
+4. Add modifier class to reveal items to css module
+5. Download and install waypoints npm install waypoints --savee
+6. Import waypoints. Need to point directory to lib/noframework.waypoints
+7. 
+
